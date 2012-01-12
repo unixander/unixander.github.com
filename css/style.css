@@ -299,3 +299,13 @@ button:hover{
  #twitter-icon:hover { 
     background-position  : -256px 0px; 
  } 
+ 
+ #parallax {
+	width: 200px;
+	height: 250px;
+    margin-right: 10px;
+    float:right;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 8em; 
+}
+	</style>

@@ -17,6 +17,7 @@
   <link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
   <link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Frijole:regular,bold' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
   <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 <body>
@@ -25,6 +26,29 @@
 		<div class="overlay"></div>
 		<div class="loading"></div>
 	</div>
+	<div id="parallax">
+			<div id="w" style='text-shadow: 0px 2px 3px #666;position:absolute; margin-top:0px; color:'>
+				W
+			</div>
+			<div id="e" style='text-shadow: 0px 2px 3px #666;position:absolute;position:absolute; margin-top: 30px;'>
+				e
+			</div>
+			<div id="l" style='text-shadow: 0px 2px 3px #666;position:absolute;position:absolute; margin-top: 80px;'>
+				l
+			</div>
+			<div id="c" style='text-shadow: 0px 2px 3px #666;position:absolute;position:absolute; margin-top: 110px;'>
+				c
+			</div>
+			<div id="o" style='text-shadow: 0px 2px 3px #666;position:absolute;position:absolute; margin-top: 150px;'>
+				o
+			</div>
+			<div id="m" style='text-shadow: 0px 2px 3px #666;position:absolute;position:absolute; margin-top: 190px;'>
+				m
+			</div>
+			<div id="e2" style='text-shadow: 0px 2px 3px #666;position:absolute;position:absolute; margin-top: 220px;'>
+				e
+			</div>
+		</div>
 	<div id="pattern" class="pattern"></div>
 	<div class="heading">
 			<h1>Unixander</h1>
@@ -146,6 +170,19 @@
 		<script type="text/javascript" src="js/jquery.transform-0.9.3.min_.js"></script>
 		<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>-->
 		<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+		<script type="text/javascript" src="js/plax.js"></script>
 		<script type="text/javascript" src="js/manual.js"></script>
+		<script type="text/javascript">
+		$(function() { 
+			$('#w').plaxify({"xRange":40,"yRange":40})
+			$('#e').plaxify({"xRange":20,"yRange":20,"invert":true})
+			$('#l').plaxify({"xRange":60,"yRange":20})
+			$('#c').plaxify({"xRange":20,"yRange":60,"invert":true})
+			$('#o').plaxify({"xRange":80,"yRange":40})
+			$('#m').plaxify({"xRange":80,"yRange":80,"invert":true})
+			$('#e2').plaxify({"xRange":20,"yRange":80})
+			$.plax.enable()
+			})
+		</script>
 </body>
 </html>
