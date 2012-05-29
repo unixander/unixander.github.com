@@ -11,9 +11,8 @@ a{
 }
 img.bgimage{
 	position:fixed;
-	left:0px;
+	right:0px;
 	top:0px;
-	width:100%;
 	opacity:0.8;
 	z-index:1;
 }
@@ -115,12 +114,13 @@ span.close:hover{
 	padding:0px 0px;
 }
 .content_inner li{
-	margin:30px;
+	margin: 10px;
 	list-style-type: circle;
 }
 ul.imagelist li{
 	float:left;
 	margin:2px;
+	list-style: none;
 	cursor:pointer;
 }
 ul.imagelist li img{
@@ -308,3 +308,23 @@ button:hover{
     font-family: 'Fredericka the Great', cursive;
     font-size: 8em; 
 	}
+	
+p.project_info b.note {
+	color: gray;
+}
+p.project_info a{
+	color: blue;
+}
+
+table.project_list {
+	margin-left: 5px;
+	padding: 3px 3px 3px 3px;
+	width:98%;
+}
+table.project_list td,th,tr {
+	font-size: 8; 
+	border: 1px solid gray; 
+	padding:3px 7px 2px 7px;
+}
+
+
