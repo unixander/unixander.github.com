@@ -1,264 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Unixander|Personal webpage</title>
-  <meta name="description" content="Unixander personal webpage" />
-  <meta name="author" content="Unixander" />
-  <!--CSS-->
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <link rel="stylesheet" type="text/css" href="css/btn_style.css" />
-  <link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
-  <link type="text/css" href="css/ui-darkness/jquery-ui-1.8.20.custom.css" rel="stylesheet" media="all"/>
-  <!--Fonts-->
-  <link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Frijole:regular,bold' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
-  <!--Favicon ico-->
-  <link rel="shortcut icon" href="images/favicon.ico" />
-</head>
-<body>
-	<div id="background" class="background">
-		<img class="bgimage" src="images/girl.png"/>
-		<div class="overlay"></div>
-		<div class="loading"></div>
-	</div>
-	<div id="pattern" class="pattern"></div>
-	<div class="heading">
-			<h1>Unixander</h1>
-	</div>
-	<div id="parallax" style="color: #fff; ">
-			<div id="w" style='text-shadow: 0px 2px 3px #666;position:absolute; margin-top:0px; z-index: 3;'>
-				W
-			</div>
-			<div id="e" style='text-shadow: 0px 2px 3px #666;position:absolute; margin-top: 30px; z-index: 3;'>
-				e
-			</div>
-			<div id="l" style='text-shadow: 0px 2px 3px #666;position:absolute; margin-top: 80px;z-index: 3;'>
-				l
-			</div>
-			<div id="c" style='text-shadow: 0px 2px 3px #666;position:absolute; margin-top: 110px;z-index: 3;'>
-				c
-			</div>
-			<div id="o" style='text-shadow: 0px 2px 3px #666;position:absolute; margin-top: 150px;z-index: 3;'>
-				o
-			</div>
-			<div id="m" style='text-shadow: 0px 2px 3px #666;position:absolute; margin-top: 190px;z-index: 3;'>
-				m
-			</div>
-			<div id="e2" style='text-shadow: 0px 2px 3px #666;position:absolute; margin-top: 220px;z-index: 3;'>
-				e
-			</div>
+	<head>
+		<title>Unixander</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+		<link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
+ 		<link href='http://fonts.googleapis.com/css?family=Frijole:regular,bold' rel='stylesheet' type='text/css'>
+  		<link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
+  		<link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
+  		<link href='http://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'>
+  		<link rel="shortcut icon" href="img/favicon.ico" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<div class="sidebar">
+		<div class="info">
+			<img class="ava" src="img/logo.jpeg"/>
+			<p>Hi. I'm Alexander Yershov (a.k.a. Unixander). I'm student. </p>
 		</div>
-	<div id="menu" class="menu">
-			<a href="#" data-speed="1000" data-easing="easeOutBack">About</a>
-			<a href="#" data-speed="1000" data-easing="easeInExpo">Projects</a>
-			<a href="#" data-speed="1000" data-easing="easeOutBack">CV</a>
-			<a href="#" data-speed="1000" data-easing="easeInExpo">Contacts</a>
-	</div>	
-	<div id="content_wrapper" class="content_wrapper">
-			<span class="close"></span>
-			<div class="content">
-				<h2>About</h2>
-				<div class="content_inner">
-					<p><b>Welcome to my personal piece of cyberspace</b></p>
-					<p>Hello, I'm Alexander, also known as Unixander. </p>
-					<p>I'm a computer programmer, and have been programming since 2009. </p>
-					<p>My main programming languages are C\C++, Java. I know HTML,CSS,TDD,MVC and many other acronyms.</p>
-					<p>Here you can find some information about me.</p>
-						<ul>
-							<li>In "Projects" there is some of my projects</li>
-							<li>In "CV" you can download my curriculum vitae</li>
-							<li>"Contacts" gives information to find me in Global Network</li>
-						</ul> 
-				</div>
-			</div>
-			<div class="content">
-				<h2>Projects</h2>
-				<div class="content_inner">
-					<section>
-						<table id="projects_list" class="project_list">
-							
-							<thread>
-								<tr>
-									<th>Title</th>
-									<th>Tags</th>
-									<th>Website</th>
-								</tr>
-							</thread>
-							<tbody>
-								<tr>
-									<td>Donetsk Guide</td>
-									<td>Java, Android</td>
-									<td>None</td>
-								</tr>
-								<tr>
-									<td>Abrakadabra_Chrome</td>
-									<td>Javascript, Chrome Browser</td>
-									<td><a href="http://unixander.org.ua/Abrakadabra_Chrome/">[link]</a></td>
-								</tr>
-							</tbody>
-						</table>
-						<p align>
-							<a href="#" id="opener" class="a-btn">
-							<span class="a-btn-text">View projects</span> 
-							<span class="a-btn-slide-text">info</span>
-							<span class="a-btn-icon-right"><span></span></span>
-						</a>
-						</p>
-					</section>
-					<div id="dialog" title="Details about projects">
-						<div id="accordion">
-							<h3><a href="#">Donetsk Guide</a></h3>
-							<div>
-							<p class="project_info">
-								<b class="note">Release Date</b>: April 2012. (Beta) <br>
-								<b class="note">Current version</b>: 1.0 Beta  <br>
-								<b class="note">Current status</b>: <img src="images/icons/PauseBlue.png"/> Temporary paused  <br>
-								<b class="note">My role</b>: developer <br>
-								<b class="note">Website</b>: <a href="#">[link](unavailable)</a><br>
-								<b class="note">OS</b>: Android 2.1+ <br>
-								<b class="note">Description</b>: Mobile application with information about main tourist places and
-								transport routes of the city of Donetsk (Ukraine). There is an opportunity to search places, 
-								get list of nearby transport stops, view objects on the map.<br>  
-								<b class="note">Developer's notes</b>: My first Android application. First of all designed for LG-Optimus One (P500)
-								or other device with the same technical features.   
-							</p>
-							<hr>
-							<ul class="imagelist">
-								<li> <img style="width: 100px;" src="images/projects/DonetskGuide/DG_Main.png"/> </li>
-								<li> <img style="width: 100px;" src="images/projects/DonetskGuide/DG_Places.png"/></li>
-								<li> <img style="width: 100px;" src="images/projects/DonetskGuide/DG_Places_list.png"/></li>
-								<li> <img style="width: 100px;" src="images/projects/DonetskGuide/DG_Route.png"/></li>
-							</ul>
-							</div>
-							<h3><a href="#">Abrakadabra Chrome</a></h3>
-							<div>
-								<p class="project_info">
-									<b class="note">Release Date</b>: May 2012 <br>
-									<b class="note">Current version</b>: 1.1.0.3  <br>
-									<b class="note">Current test version</b>: 1.1.0.5 <br>
-									<b class="note">Current status</b>: <img src="images/icons/SyncGreen.png"/>developing<br>
-									<b class="note">My role</b>: developer <br>
-									<b class="note">Website</b>: <a href="http://unixander.org.ua/Abrakadabra_Chrome/">[link]</a><br>
-									<b class="note">Description</b>:
-									 Chrome extension for Russian users. It helps to correct words written in another keyboard layout.
-									 For example, Russian word "Привет" written in English layout "Ghbdtn". At the moment, available 
-									 two directions of the correction: Eng->Rus, Rus->Eng. There is both automatic correction or 
-									 correction on hotkey pressed.
-									 <br> 
-									 Supports: vk.com, facebook.com, Gmail, imo.im chats.   
-									<br>  
-									<b class="note">Developer's notes</b>: Now available only for Chrome browser. The purpose was to 
-									practice in pure javascript and to write my first extension for Chrome. 
-								</p>
-								<hr>
-								<ul class="imagelist">
-									<li> <img style="width: 200px;" src="images/projects/Abrakadabra_Chrome/Abra_Popup.png" /></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="content">
-				<h2>CV</h2>
-				<div class="content_inner">
-					<p><b>Contact information</b></p>
-					<p>Alexander Yershov</p>
-					<p> E-mail: <span style="color: #7401DF;">unixander[at]gmail.com</span></p>
-					<p>(other information available on request.)</p>
-					<p>
-						<a href="#" class="a-btn">
-						<span class="a-btn-text">Download CV</span> 
-						<span class="a-btn-slide-text">PDF</span>
-						<span class="a-btn-icon-right"><span></span></span>
-						</a>
-					</p>
-					<p>
-						<a href="#" class="a-btn">
-						<span class="a-btn-text">View CV</span> 
-						<span class="a-btn-slide-text">Gdocs</span>
-						<span class="a-btn-icon-right"><span></span></span>
-						</a>
-					</p>
-				</div>
-			</div>
-			<div class="content">
-				<h2>Contacts</h2>
-				<div class="content_inner">
-					<div id="Contacts">
-					<div class="sprites" id="mail-icon">
-						<p>
-							<a   href="mailto:unixander@gmail.com"> unixander[at]gmail.com </a>
-						</p>
-					</div> 
-					<div class="sprites" id="twitter-icon">
-						<p>
-							<a   href="http://twitter.com/unixander"> Twitter</a>
-						</p>
-					</div>
-					<div class="sprites" id="git-icon">
-						<p>
-							<a   href="http://github.com/unixander"> Github</a>
-						</p>
-					</div>
-					<div class="sprites" id="fb-icon">
-						<p>
-							<a href="http://fb.com/unixander"> Facebook</a>
-						</p>
-					</div>
-					<div class="sprites" id="in-icon">
-						<p>
-							<a   href="http://linkedin.com/in/unixander"> LinkedIn</a>
-						</p>
-					</div>
-					</div>
-				</div>
-			</div>
+		<div class="side-nav">
+			<ul>
+					<li class="active" onclick="loadPage(this)">
+						Home
+					</li>
+					<li onclick="loadPage(this)">
+						Projects
+					</li >
+					<li onclick="loadPage(this)">
+						CV
+					</li>
+					<li onclick="loadPage(this)">
+						Blog
+					</li >
+					<li onclick="loadPage(this)">
+						Contact
+					</li>
+				</ul>
+		</div>
+		<div id="footer">
+			Unixander(c)2012<br>
+			<a href="unixander.bitbicket.org">Old version</a>
+		</div>
 	</div>
-			<!--The Javascript-->
-		<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
-		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<body>
+		<img class="bgimage" id="girl" src="img/girl.png"/>
+		<div class="scroll-pane" id="content">
+		</div>
+	</body>
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
 		<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
-		<script type="text/javascript" src="js/jquery.transform-0.9.3.min_.js"></script>
-		<script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
-		<script type="text/javascript" src="js/plax.js"></script>
-		<script type="text/javascript" src="js/manual.js"></script>
-		<script type="text/javascript">
-			$(function() {
-				$( "#accordion" ).accordion({
-					fillSpace: true
+		<script type="text/javascript" src="js/mwheelIntent.js"></script>
+		<script>
+			$('#content').load('home.html');
+			function init(){
+				//$('#content').height($(window).height()-60);
+				//$('#content').jScrollPane();
+				var url = window.location.pathname;
+				if(url.indexOf('#')>-1){
+					var path=url.substr(url.indexOf('#'),url.length);
+				}
+			}
+			init();
+			function loadPage(e){
+				var next=$(e).html().toLowerCase();
+				if($(e).is('.active')){
+					return;
+				} else {
+					var path=next+'.html';
+					$('#content').load(path);
+					$('.active').removeClass('active');
+					$(e).addClass('active');
+				}
+			}
+			$(window).resize(function() {
+				if($(window).width()>1024){
+				  	$('#girl').show("slow");
+				 }
+				  else {
+				  	$('#girl').hide('slow');
+				  }
 				});
-			});
-			$.fx.speeds._default = 1000;
-			$(function() {
-				$( "#dialog" ).dialog({
-					minHeight: 600,
-					minWidth: 1024,
-					autoOpen: false,
-					show: "fold",
-					hide: "fold",
-					modal: true
-				});
-		
-				$( "#opener" ).click(function() {
-					$( "#dialog" ).dialog( "open" );
-					$("#accordion").accordion( "resize" );
-					return false;
-				});
-			});
-		$(function() { 
-			$('#w').plaxify({"xRange":10,"yRange":10})
-			$('#e').plaxify({"xRange":20,"yRange":20,"invert":true})
-			$('#l').plaxify({"xRange":60,"yRange":20})
-			$('#c').plaxify({"xRange":20,"yRange":60,"invert":true})
-			$('#o').plaxify({"xRange":80,"yRange":40})
-			$('#m').plaxify({"xRange":80,"yRange":80,"invert":true})
-			$('#e2').plaxify({"xRange":20,"yRange":80})
-			$.plax.enable()
-			})
 		</script>
-</body>
 </html>
