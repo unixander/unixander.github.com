@@ -30,7 +30,7 @@
 					<li onclick="loadPage(this)">
 						CV
 					</li>
-					<li onclick="loadPage(this)">
+					<li id="blog" onclick="loadPage(this)">
 						Blog
 					</li >
 					<li onclick="loadPage(this)">
@@ -62,6 +62,8 @@
 				if(blog!=undefined){
 					var path="blog/"+blog+'.html';
 					$('#content').load(path);
+					$('.active').removeClass('active');
+					$('#blog').addClass('active');
 				}
 			}
 			
