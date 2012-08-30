@@ -4,6 +4,7 @@
 		<title>Unixander</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/styles/monokai.css">
 		<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
 		<link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
  		<link href='http://fonts.googleapis.com/css?family=Frijole:regular,bold' rel='stylesheet' type='text/css'>
@@ -73,6 +74,9 @@
 					$('#content').load(path);
 					$('.active').removeClass('active');
 					$(e).addClass('active');
+					$(document).ready(function() {
+					  $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+					});
 				}
 			}
 			$(window).resize(function() {
