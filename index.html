@@ -57,12 +57,13 @@
 			function init(){
 				//$('#content').height($(window).height()-60);
 				//$('#content').jScrollPane();
-				var url = window.location.pathname;
-				if(url.indexOf('#')>-1){
-					var path=url.substr(url.indexOf('#'),url.length);
+				var blog = $.getUrlVar('blog');
+				if(blog!=undefined){
+					var path="blog/"+blog+'.html';
+					$('#content').load(path);
 				}
 			}
-			init();
+			
 			function loadPage(e){
 				var next=$(e).html().toLowerCase();
 				if($(e).is('.active')){
@@ -82,5 +83,22 @@
 				  	$('#girl').hide('slow');
 				  }
 				});
+			$.extend({
+			  getUrlVars: function(){
+			    var vars = [], hash;
+			    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			    for(var i = 0; i < hashes.length; i++)
+			    {
+			      hash = hashes[i].split('=');
+			      vars.push(hash[0]);
+			      vars[hash[0]] = hash[1];
+			    }
+			    return vars;
+			  },
+			  getUrlVar: function(name){
+			    return $.getUrlVars()[name];
+			  }
+			});
+			init();
 		</script>
 </html>
