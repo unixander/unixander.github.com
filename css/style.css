@@ -26,12 +26,12 @@ img.bgimage{
     font-size: 42px;
     margin-bottom: 10px;
     padding: 0 0 5px;
-    text-shadow: 0 0 1px #FFFFFF;
+    text-shadow: 0px 1px 0px #FFFFFF;
 }
 
 #content h2:hover{
 	color:#f70098;
-	text-shadow: 0 0 5px gray;
+	text-shadow: -1px -1px 1px rgb(51,51,51),1px 1px 1px #FFFFFF;
 }
 
 .sidebar{

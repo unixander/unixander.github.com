@@ -2,104 +2,106 @@
 <html lang="en">
 	<head>
 		<title>Unixander</title>
-		<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
-		<link type="text/css" href="css/bootstrap-responsive.min.css" rel="stylesheet">
-		<link type="text/css" href="css/style.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
 		<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
 		<link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
- 		<link href='http://fonts.googleapis.com/css?family=Frijole:regular,bold' rel='stylesheet' type='text/css'>
-  		<link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
-  		<link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
-  		<link href='http://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'>
-  		<link rel="shortcut icon" href="img/favicon.ico" />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link href='http://fonts.googleapis.com/css?family=Frijole:regular,bold' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" href="img/favicon.ico" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	</head>
 	<div class="sidebar">
 		<div class="info">
 			<img class="ava" src="img/logo.jpeg"/>
-			<p>Hi. I'm Alexander Yershov (a.k.a. Unixander). I'm student. </p>
+			<p>
+				Hi. I'm Alexander Yershov (a.k.a. Unixander). I'm student.
+			</p>
 		</div>
 		<div class="side-nav">
 			<ul>
-					<li class="active" onclick="loadPage(this)">
-						Home
-					</li>
-					<li onclick="loadPage(this)">
-						Projects
-					</li >
-					<li onclick="loadPage(this)">
-						CV
-					</li>
-					<li onclick="loadPage(this)">
-						Blog
-					</li >
-					<li onclick="loadPage(this)">
-						Contact
-					</li>
-				</ul>
+				<li class="active" onclick="loadPage(this)">
+					Home
+				</li>
+				<li onclick="loadPage(this)">
+					Projects
+				</li >
+				<li onclick="loadPage(this)">
+					CV
+				</li>
+				<li onclick="loadPage(this)">
+					Blog
+				</li >
+				<li onclick="loadPage(this)">
+					Contact
+				</li>
+			</ul>
 		</div>
 		<div id="footer">
-			Unixander(c)2012<br>
+			Unixander(c)2012
+			<br>
 			<a href="unixander.bitbicket.org">Old version</a>
 		</div>
 	</div>
 	<body>
 		<img class="bgimage" id="girl" src="img/girl.png"/>
-		<div class="scroll-pane" id="content">
-		</div>
+		<div class="scroll-pane" id="content"></div>
 	</body>
-		<script src="js/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
-		<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
-		<script type="text/javascript" src="js/mwheelIntent.js"></script>
-		<script>
-			$('#content').load('home.html');
-			function init(){
-				//$('#content').height($(window).height()-60);
-				//$('#content').jScrollPane();
-				var blog = $.getUrlVar('blog');
-				if(blog!=undefined){
-					var path="blog/"+blog+'.html';
-					$('#content').load(path);
-				}
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+	<script type="text/javascript" src="js/mwheelIntent.js"></script>
+	<script>
+		$('#content').load('home.html');
+		function init() {
+			//$('#content').height($(window).height()-60);
+			//$('#content').jScrollPane();
+			var blog = $.getUrlVar('blog');
+			if (blog != undefined) {
+				var path = "blog/" + blog + '.html';
+				$('#content').load(path);
 			}
-			
-			function loadPage(e){
-				var next=$(e).html().toLowerCase();
-				if($(e).is('.active')){
-					return;
-				} else {
-					var path=next+'.html';
-					$('#content').load(path);
-					$('.active').removeClass('active');
-					$(e).addClass('active');
-				}
+		}
+
+		function loadPage(e) {
+			var next = $(e).html().toLowerCase();
+			if ($(e).is('.active')) {
+				return;
+			} else {
+				var path = next + '.html';
+				$('#content').load(path);
+				$('.active').removeClass('active');
+				$(e).addClass('active');
 			}
-			$(window).resize(function() {
-				if($(window).width()>1024){
-				  	$('#girl').show("slow");
-				 }
-				  else {
-				  	$('#girl').hide('slow');
-				  }
-				});
-			$.extend({
-			  getUrlVars: function(){
-			    var vars = [], hash;
-			    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-			    for(var i = 0; i < hashes.length; i++)
-			    {
-			      hash = hashes[i].split('=');
-			      vars.push(hash[0]);
-			      vars[hash[0]] = hash[1];
-			    }
-			    return vars;
-			  },
-			  getUrlVar: function(name){
-			    return $.getUrlVars()[name];
-			  }
-			});
-			init();
-		</script>
+		}
+
+
+		$(window).resize(function() {
+			if ($(window).width() > 1024) {
+				$('#girl').show("slow");
+			} else {
+				$('#girl').hide('slow');
+			}
+		});
+		$.extend({
+			getUrlVars : function() {
+				var vars = [], hash;
+				var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+				for (var i = 0; i < hashes.length; i++) {
+					hash = hashes[i].split('=');
+					vars.push(hash[0]);
+					vars[hash[0]] = hash[1];
+				}
+				return vars;
+			},
+			getUrlVar : function(name) {
+				return $.getUrlVars()[name];
+			}
+		});
+		init();
+	</script>
 </html>
