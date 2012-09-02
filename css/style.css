@@ -6,11 +6,12 @@ a:hover{
 	color: #f70098;
 	text-decoration: none;
 }
-#content{
+.content{
 	border-width: 2px;
 	border-color: black;
 	max-width: 600px;
 	margin: 40px 0px 0px 350px;
+	overflow: auto;
 }
 img.bgimage{
 	position:fixed;
@@ -20,7 +21,7 @@ img.bgimage{
 	z-index:1;
 }
 
-#content h2{
+.content h2{
 	text-align: center;
 	font-family: "Frijole";
     font-size: 42px;
@@ -29,7 +30,7 @@ img.bgimage{
     text-shadow: 0px 1px 0px #FFFFFF;
 }
 
-#content h2:hover{
+.content h2:hover{
 	color:#f70098;
 	text-shadow: -1px -1px 1px rgb(51,51,51),1px 1px 1px #FFFFFF;
 }
