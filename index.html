@@ -53,6 +53,7 @@
 	<script src="js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script>
+		$('#content').load('home.html');
 		function init() {
 			var blog = $.getUrlVar('blog');
 			if (blog != undefined) {
@@ -63,7 +64,6 @@
 			var hash=window.location.hash;
 			var p="",index=-1;
 			switch(hash){
-				case "":
 				case "#home":
 					p="home.html";
 					index=0;
