@@ -59,9 +59,10 @@
 			if (blog != undefined) {
 				var path = "blog/" + blog + '.html';
 				$('#content').load(path);
+				$('.active').removeClass('active');
 				return;
 			}
-			if($('article')!=undefined) return;
+			if(hash==""&&$('article')!=undefined) return;
 			var p="",index=-1;
 			switch(hash){
 				case "":
