@@ -60,8 +60,10 @@
 				var path = "blog/" + blog + '.html';
 				$('#content').load(path);
 				$('.active').removeClass('active');
+				window.location=window.location.path;
 				return;
 			}
+			console.log(hash);
 			if(hash==""&&$('article')!=undefined) return;
 			var p="",index=-1;
 			switch(hash){
@@ -130,7 +132,7 @@
 				return $.getUrlVars()[name];
 			}
 		});
-		$(window).bind('hashchange', init);
+		$(window).bind('hashchange',init);
 		init();
 	</script>
 </html>
