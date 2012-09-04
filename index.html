@@ -56,12 +56,12 @@
 		function init() {
 			var blog = $.getUrlVar('blog');
 			var hash=window.location.hash;
-			if($('article')!=undefined) return;
 			if (blog != undefined) {
 				var path = "blog/" + blog + '.html';
 				$('#content').load(path);
 				return;
 			}
+			if($('article')!=undefined) return;
 			var p="",index=-1;
 			switch(hash){
 				case "":
