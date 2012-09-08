@@ -62,8 +62,7 @@
 				$('.active').removeClass('active');
 				return;
 			}
-			console.log(hash);
-			if(hash==""&&$('article')) return;
+			if(hash==""&&$('article').length>0) return;
 			var p="",index=-1;
 			switch(hash){
 				case "":
