@@ -60,11 +60,10 @@
 				var path = "blog/" + blog + '.html';
 				$('#content').load(path);
 				$('.active').removeClass('active');
-				window.location=window.location.path;
 				return;
 			}
 			console.log(hash);
-			if(hash==""&&$('article')!=undefined) return;
+			if(hash==""&&$('article')) return;
 			var p="",index=-1;
 			switch(hash){
 				case "":
@@ -96,7 +95,6 @@
 				 $('ul#nav li:eq('+index+')').addClass('active');
 			}
 		}
-
 		function loadPage(e) {
 			var next = $(e).html().toLowerCase();
 			if ($(e).is('.active')) {
@@ -133,6 +131,6 @@
 			}
 		});
 		$(window).bind('hashchange',init);
-		init();
+		$(init);
 	</script>
 </html>
