@@ -84,11 +84,11 @@
 				default:
 					if (hash.indexOf('blog') > -1) {
 						var pathes = window.location.hash.split('#');
-						p = pathes[1] + '.html';
+						p = pathes[1].toLowerCase() + '.html';
 						if (pathes.length > 2) {
 							newhash = pathes[2];
 						} else {
-							newhash = pathes[1];
+							newhash = p;
 						}
 					} else {
 						p = "404.html";
