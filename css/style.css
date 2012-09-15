@@ -2,6 +2,16 @@ body {
 	overflow-x: hidden;
 	background-image: url('../img/retro_intro.png');
 }
+*::selection {
+	background:#f70098;
+	color:#FFFFFF;
+}
+
+*::-moz-selection{
+	background:#f70098;
+	color:#FFFFFF;
+}
+
 a:hover {
 	color: #f70098;
 	text-decoration: none;
