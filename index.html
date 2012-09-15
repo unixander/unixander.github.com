@@ -54,7 +54,9 @@
 	<script src="js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script>
+		var hashchange=true;
 		function init() {
+			if(!hashchange) return; 
 			var hash = window.location.hash;
 			var newhash = "";
 			var p = "", index = -1;
@@ -85,21 +87,12 @@
 					if (hash.indexOf('blog') > -1) {
 						var pathes = window.location.hash.split('#');
 						p = pathes[1].toLowerCase() + '.html';
-						if (pathes.length > 2) {
-							newhash = pathes[2];
-						} else {
-							newhash = p;
-						}
 					} else {
 						p = "404.html";
 					}
 			};
 			if (p != "") {
 				$('#content').load(p);
-				if (newhash.length > 0)
-					window.location.hash = newhash;
-				else
-					window.location.hash = hash;
 				$('.active').removeClass('active');
 				if (index != -1) {
 					$('ul#nav li:eq(' + index + ')').addClass('active');
@@ -127,7 +120,7 @@
 			} else {
 				$('#girl').hide('slow');
 			}
-		}).bind('hashchange', init);
+		}).bind('hashchange',init);
 		$(init);
 	</script>
 </html>
