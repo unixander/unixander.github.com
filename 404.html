@@ -1,0 +1,27 @@
+<page404>
+	<h1>Sorry, page not found</h1>
+	<p id='message404'>
+
+	</p>
+	<script>
+		var message404 = ["Hello. This is 404 page.",
+						  "And the page, you're loking for, doesn't exist. Sorry :`("]
+			timeout=100, 
+			endmessage = 0,
+			lastmessage=0, 
+			toprint="";
+			print404 = function() {
+				if(endmessage>message404[lastmessage].length) {
+					endmessage=0;
+					lastmessage++;
+					toprint+="</br>";
+				}
+				toprint+=message404[lastmessage].charAt(endmessage);
+				$('#message404').html(toprint);
+				endmessage++;
+				if ($('#message404') && lastmessage <= message404.length)
+					setTimeout(print404,timeout );
+			}
+		setTimeout(print404, timeout);
+	</script>
+</page404>

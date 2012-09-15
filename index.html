@@ -13,7 +13,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'/>
 		<link href='http://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'/>
 		<link rel="shortcut icon" href="img/favicon.ico" />
-		
+
 	</head>
 	<body>
 		<img class="bgimage" id="girl" src="img/girl.png"/>
@@ -27,19 +27,19 @@
 			</div>
 			<div class="side-nav">
 				<ul id="nav">
-					<li class="active" onclick="loadPage(this)">
+					<li class="active" onclick="loadPage(this)" href="home">
 						Home
 					</li>
-					<li onclick="loadPage(this)">
+					<li onclick="loadPage(this)" href="projects">
 						Projects
 					</li >
-					<li onclick="loadPage(this)">
+					<li onclick="loadPage(this)" href="cv">
 						CV
 					</li>
-					<li onclick="loadPage(this)">
+					<li onclick="loadPage(this)" href="blog">
 						Blog
 					</li >
-					<li onclick="loadPage(this)">
+					<li onclick="loadPage(this)" href="contact">
 						Contact
 					</li>
 				</ul>
@@ -55,54 +55,67 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script>
 		function init() {
-			var blog = $.getUrlVar('blog');
-			var hash=window.location.hash;
-			if (blog != undefined) {
-				var path = "blog/" + blog + '.html';
-				$('#content').load(path);
-				$('.active').removeClass('active');
-				return;
-			}
-			if(hash==""&&$('article').length>0) return;
-			var p="",index=-1;
-			switch(hash){
+			var hash = window.location.hash;
+			var newhash = "";
+			var p = "", index = -1;
+			switch(hash) {
 				case "":
 				case "#":
 				case "#home":
-					p="home.html";
-					index=0;
+					p = "home.html";
+					index = 0;
 					break;
 				case "#projects":
-					p="projects.html";
-					index=1;
+					p = "projects.html";
+					index = 1;
 					break;
 				case "#cv":
-					p="cv.html";
-					index=2;
+					p = "cv.html";
+					index = 2;
 					break;
 				case "#blog":
-					p="blog.html";
-					index=3;
+					p = "blog.html";
+					index = 3;
 					break;
 				case "#contact":
-					p="contact.html";
-					index=4;
+					p = "contact.html";
+					index = 4;
 					break;
+				default:
+					if (hash.indexOf('blog') > -1) {
+						var pathes = window.location.hash.split('#');
+						p = pathes[1] + '.html';
+						if (pathes.length > 2) {
+							newhash = pathes[2];
+						} else {
+							newhash = pathes[1];
+						}
+					} else {
+						p = "404.html";
+					}
 			};
-			if(p!=""){
-				 $('#content').load(p);
-				 $('.active').removeClass('active');
-				 $('ul#nav li:eq('+index+')').addClass('active');
+			if (p != "") {
+				$('#content').load(p);
+				if (newhash.length > 0)
+					window.location.hash = newhash;
+				else
+					window.location.hash = hash;
+				$('.active').removeClass('active');
+				if (index != -1) {
+					$('ul#nav li:eq(' + index + ')').addClass('active');
+				}
 			}
 		}
+
 		function loadPage(e) {
-			var next = $(e).html().toLowerCase();
+			var next = $(e).attr('href');
 			if ($(e).is('.active')) {
 				return;
 			} else {
-				var path = next + '.html';
-				$('#content').load(path);
-				$('.active').removeClass('active');
+				window.location.hash = next;
+				if ($('.active')) {
+					$('.active').removeClass('active');
+				}
 				$(e).addClass('active');
 			}
 		}
@@ -114,23 +127,7 @@
 			} else {
 				$('#girl').hide('slow');
 			}
-		});
-		$.extend({
-			getUrlVars : function() {
-				var vars = [], hash;
-				var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-				for (var i = 0; i < hashes.length; i++) {
-					hash = hashes[i].split('=');
-					vars.push(hash[0]);
-					vars[hash[0]] = hash[1];
-				}
-				return vars;
-			},
-			getUrlVar : function(name) {
-				return $.getUrlVars()[name];
-			}
-		});
-		$(window).bind('hashchange',init);
+		}).bind('hashchange', init);
 		$(init);
 	</script>
 </html>
