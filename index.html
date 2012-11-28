@@ -92,7 +92,12 @@
 					}
 			};
 			if (p != "") {
-				$('#content').load(p);
+				$('#content').load(p,function(response, status, xhr){
+					if (status == "error") {
+						p="404.html";
+						$(this).load(p);
+					}
+				});
 				$('.active').removeClass('active');
 				if (index != -1) {
 					$('ul#nav li:eq(' + index + ')').addClass('active');
